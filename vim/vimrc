@@ -34,6 +34,14 @@ Bundle 'mileszs/ack.vim'
 
 Bundle 'altercation/vim-colors-solarized'
 
+" The fancy nu/rnu combo is 7.4 and newer only
+if version >= 704
+    set relativenumber              " Relative line numbers on
+    set number                      " Line numbers on
+else
+    Bundle 'myusuf3/numbers.vim'
+endif
+
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -102,8 +110,6 @@ color solarized
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
-    set relativenumber              " Relative line numbers on
-    set number                      " Line numbers on
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
     set showmatch                   " Show matching brackets/parenthesis
