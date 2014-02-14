@@ -7,6 +7,8 @@ call vundle#rc()
 "Other settings
 let g:airline#extensions#tabline#enabled = 1
 
+let g:ctrlp_working_path_mode = 'ra'
+
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
