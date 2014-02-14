@@ -34,14 +34,6 @@ Bundle 'mileszs/ack.vim'
 
 Bundle 'altercation/vim-colors-solarized'
 
-" The fancy nu/rnu combo is 7.4 and newer only
-if version >= 704
-    set relativenumber              " Relative line numbers on
-    set number                      " Line numbers on
-else
-    Bundle 'myusuf3/numbers.vim'
-endif
-
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -63,6 +55,17 @@ set t_Co=16
 "let g:solarized_termcolors=256
 color solarized
 " color peaksea
+
+" The fancy nu/rnu combo is 7.4 and newer only
+" after setting the colorscheme because it resets hl-CursorLineNr
+if version >= 704
+    set relativenumber              " Relative line numbers on
+    set number                      " Line numbers on
+    highlight CursorLineNr cterm=none ctermfg=2
+else
+    Bundle 'myusuf3/numbers.vim'
+endif
+
 
 " Some stuff taken from spf13
 "
