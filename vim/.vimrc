@@ -30,21 +30,29 @@ Bundle 'peaksea'
 Bundle 'restore_view.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'Townk/vim-autoclose'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
+
+Plugin 'rust-lang/rust.vim'
 
 Bundle 'altercation/vim-colors-solarized'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
-
 filetype plugin indent on     " required!
 
+" Syntastic Settings "
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " NERDTree settings "
 "
@@ -56,9 +64,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 set background=dark
+" t_Co=16,g:solarize_termtrans=1 seems to do work:
+" 1. Local iterm2 on OS Xwith iterm2 set to solarized palette
+" 2. ssh into a Linux box using iterm2 w/paletter
+" 3. iterm2 w/palette, ssh w/ byobu/tmux on linux
+" 4. Local xfce4-terminal w/palette on the same linux host
+" 5. Byobu/tmux in xfce4-terminal w/palette on the same host shows
+"    bold instead of normal for elements that are supposed to be grey,
+"    which is less irritating than some of the other variations.  GNU
+"    screen in the xfce4-terminal does not seem to have the same issue.
 set t_Co=16
-"let g:solarized_termcolors=256
-color solarized
+let g:solarized_termtrans=1
+colorscheme solarized
 " color peaksea
 
 " The fancy nu/rnu combo is 7.4 and newer only
@@ -87,6 +104,7 @@ endif
     set history=1000                    " Store a ton of history (default i#
     "set spell
     set hidden
+
 " }
 
 " Vim UI {
@@ -115,6 +133,9 @@ endif
         set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=%{tagbar#currenttag('\ [%s]\ ','')}
         "set statusline+=\ [%{getcwd()}]          " Current dir
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
