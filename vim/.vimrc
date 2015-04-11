@@ -40,6 +40,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 
 Plugin 'rust-lang/rust.vim'
+"Bundle 'phildawes/racer'
 
 Bundle 'altercation/vim-colors-solarized'
 
@@ -48,11 +49,14 @@ Bundle 'altercation/vim-colors-solarized'
 " ...
 filetype plugin indent on     " required!
 
-" Syntastic Settings "
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" racer settings
+"let g:racer_cmd = "/home/awsaba/src/rust/racer/target/release/racer"
+"let $RUST_SRC_PATH = "/home/awsaba/src/rust/rust/src"
 
 " NERDTree settings "
 "
