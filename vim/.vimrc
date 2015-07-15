@@ -181,13 +181,14 @@ endif
 
 "Key/Command Mappings {
     " For when you forget to sudo.. Really Write the file.
-    let mapleader=","
     cmap w!! w !sudo tee % >/dev/null
 
+    let mapleader=","
     nmap <Leader>b :TagbarToggle<cr>
     nmap <Leader>n :bnext<cr>
     nmap <Leader>p :bprev<cr>
     nmap <Leader>d :bprev<bar>bdelete#<cr>
+    nmap <Leader>g :CtrlPBuffer<cr>
 " }
 
 " Functions {
