@@ -40,6 +40,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 
 Plugin 'rust-lang/rust.vim'
+Plugin 'timonv/vim-cargo'
 "Bundle 'phildawes/racer'
 
 Bundle 'altercation/vim-colors-solarized'
