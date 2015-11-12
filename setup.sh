@@ -12,3 +12,5 @@ git clone git@github.com:gmarik/vundle.git vim/.vim/bundle/vundle
 stow vim
 vim +PluginInstall +qall
 
+cat bashrc.template >> ~/.bashrc
+

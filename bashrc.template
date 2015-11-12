@@ -1,0 +1,7 @@
+# cat onto the end of .bashrc
+
+if [ -e "$HOME/.dotfiles/bashrc" ] ; then
+
+    source $HOME/.dotfiles/bashrc
+fi
+
