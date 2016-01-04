@@ -38,7 +38,9 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
+Plugin 'fatih/vim-go'
 
+Plugin 'saltstack/salt-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'timonv/vim-cargo'
 "Bundle 'phildawes/racer'
@@ -178,8 +180,7 @@ endif
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
-    autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml,rust autocmd BufWritePre <buffer> call StripTrailingWhitespace()
-    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml,rust autocmd BufWritePre <buffer> call StripTrailingWhitespace()
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 
 " }
