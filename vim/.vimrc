@@ -10,7 +10,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_working_path_mode = 'ra'
 
 " Ubuntu 12.04 package does not support -s
-let g:ack_default_options = " -H --nocolor --nogroup --column"
+let g:ack_default_options = " -H --nocolor --nogroup --column --ignore-file=is:tags"
 
 " let Vundle manage Vundle
 " required!
