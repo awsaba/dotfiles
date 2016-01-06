@@ -181,6 +181,8 @@ endif
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
     autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml,rust autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    " HACK to get syntastic to kind of sort of work better
+    autocmd FileType go autocmd BufWritePre <buffer> let $GOPATH = go#path#Detect()
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 
 " }
